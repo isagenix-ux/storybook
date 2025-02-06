@@ -1,175 +1,128 @@
-import React from 'react';
-import { Meta, StoryObj } from '@storybook/react';
-import Dialog from '@mui/material/Dialog';
-import DialogTitle from '@mui/material/DialogTitle';
-import DialogContent from '@mui/material/DialogContent';
-import DialogContentText from '@mui/material/DialogContentText';
-import DialogActions from '@mui/material/DialogActions';
-import Button from '@mui/material/Button';
-import TextField from '@mui/material/TextField';
+import { useState } from 'react';
+import {
+  Button,
+  Dialog,
+  DialogTitle,
+  DialogContent,
+  DialogContentText,
+  DialogActions,
+} from '@mui/material';
+import type { Meta, StoryObj } from '@storybook/react';
 
-const meta = {
+const meta: Meta<typeof Dialog> = {
   title: 'MUI/Dialog',
   component: Dialog,
   tags: ['autodocs'],
-  argTypes: {
-    open: {
-      description: 'If true, the dialog is open',
-      control: 'boolean',
-      table: {
-        type: { summary: 'boolean' },
-        defaultValue: { summary: false },
-      },
-    },
-    fullWidth: {
-      description: 'If true, the dialog stretches to maxWidth',
-      control: 'boolean',
-      table: {
-        type: { summary: 'boolean' },
-        defaultValue: { summary: false },
-      },
-    },
-    maxWidth: {
-      description: 'Determine the max-width of the dialog',
-      options: ['xs', 'sm', 'md', 'lg', 'xl', false],
-      control: { type: 'select' },
-      table: {
-        type: { summary: 'string | false' },
-        defaultValue: { summary: 'sm' },
-      },
-    },
-    scroll: {
-      description: 'Determine the container for scrolling the dialog',
-      options: ['body', 'paper'],
-      control: { type: 'radio' },
-      table: {
-        type: { summary: 'string' },
-        defaultValue: { summary: 'paper' },
-      },
-    },
-    fullScreen: {
-      description: 'If true, the dialog will be full-screen',
-      control: 'boolean',
-      table: {
-        type: { summary: 'boolean' },
-        defaultValue: { summary: false },
-      },
-    },
-    disableEscapeKeyDown: {
-      description: 'If true, hitting escape will not fire the onClose callback',
-      control: 'boolean',
-      table: {
-        type: { summary: 'boolean' },
-        defaultValue: { summary: false },
-      },
-    },
-    disableBackdropClick: {
-      description: 'If true, clicking the backdrop will not fire the onClose callback',
-      control: 'boolean',
-      table: {
-        type: { summary: 'boolean' },
-        defaultValue: { summary: false },
-      },
-    },
-    keepMounted: {
-      description: 'Always keep the children in the DOM',
-      control: 'boolean',
-      table: {
-        type: { summary: 'boolean' },
-        defaultValue: { summary: false },
-      },
-    },
-    transitionDuration: {
-      description: 'The duration for the transition, in milliseconds',
-      control: 'number',
-      table: {
-        type: { summary: 'number | { enter?: number, exit?: number }' },
-      },
-    },
-    onClose: {
-      description: 'Callback fired when the dialog requests to be closed',
-      action: 'closed',
-      table: {
-        type: { summary: 'function' },
-      },
-    },
+  parameters: {
+    layout: 'centered',
   },
-} satisfies Meta<typeof Dialog>;
+};
 
 export default meta;
 type Story = StoryObj<typeof Dialog>;
 
-export const Basic: Story = {
-  args: {
-    open: true,
-    children: (
-      <>
-        <DialogTitle>Dialog Title</DialogTitle>
+const DialogWithState = ({ ...args }) => {
+  const [open, setOpen] = useState(false);
+
+  const handleClickOpen = () => {
+    setOpen(true);
+  };
+
+  const handleClose = () => {
+    setOpen(false);
+  };
+
+  return (
+    <>
+      <Button variant="contained" onClick={handleClickOpen}>
+        Open Dialog
+      </Button>
+      <Dialog
+        {...args}
+        open={open}
+        onClose={handleClose}
+        aria-labelledby="dialog-title"
+        aria-describedby="dialog-description"
+      >
+        <DialogTitle id="dialog-title">Dialog Title</DialogTitle>
         <DialogContent>
-          <DialogContentText>
-            This is a basic dialog example. You can customize it using the controls below.
+          <DialogContentText id="dialog-description">
+            This is a sample dialog content. You can put any content here.
           </DialogContentText>
         </DialogContent>
         <DialogActions>
-          <Button>Cancel</Button>
-          <Button>OK</Button>
+          <Button onClick={handleClose}>Cancel</Button>
+          <Button onClick={handleClose} variant="contained" autoFocus>
+            Confirm
+          </Button>
         </DialogActions>
-      </>
-    ),
-  },
+      </Dialog>
+    </>
+  );
 };
 
-export const FullWidth: Story = {
+export const Basic: Story = {
+  render: (args) => <DialogWithState {...args} />,
   args: {
-    ...Basic.args,
-    fullWidth: true,
     maxWidth: 'sm',
+    fullWidth: true,
   },
 };
 
-export const Scrollable: Story = {
-  args: {
-    ...Basic.args,
-    scroll: 'paper',
-    children: (
+export const WithLongContent: Story = {
+  render: (args) => {
+    const [open, setOpen] = useState(false);
+    return (
       <>
-        <DialogTitle>Scrollable Dialog</DialogTitle>
-        <DialogContent dividers>
-          <DialogContentText>
-            {Array(50).fill('This is repeated content to demonstrate scrolling. ').join('')}
-          </DialogContentText>
-        </DialogContent>
-        <DialogActions>
-          <Button>Cancel</Button>
-          <Button>OK</Button>
-        </DialogActions>
+        <Button variant="contained" onClick={() => setOpen(true)}>
+          Open Long Dialog
+        </Button>
+        <Dialog {...args} open={open} onClose={() => setOpen(false)}>
+          <DialogTitle>Scrollable Dialog</DialogTitle>
+          <DialogContent>
+            <DialogContentText>
+              {Array(10).fill(
+                'This is a long paragraph of text that will make the dialog scrollable. '
+              )}
+            </DialogContentText>
+          </DialogContent>
+          <DialogActions>
+            <Button onClick={() => setOpen(false)}>Close</Button>
+          </DialogActions>
+        </Dialog>
       </>
-    ),
+    );
+  },
+  args: {
+    scroll: 'paper',
+    maxWidth: 'sm',
+    fullWidth: true,
   },
 };
 
-export const WithForm: Story = {
-  render: () => (
-    <Dialog open={true}>
-      <DialogTitle>Subscribe</DialogTitle>
-      <DialogContent>
-        <DialogContentText>
-          To subscribe to this website, please enter your email address here.
-        </DialogContentText>
-        <TextField
-          autoFocus
-          margin="dense"
-          id="name"
-          label="Email Address"
-          type="email"
-          fullWidth
-          variant="standard"
-        />
-      </DialogContent>
-      <DialogActions>
-        <Button>Cancel</Button>
-        <Button variant="contained">Subscribe</Button>
-      </DialogActions>
-    </Dialog>
-  ),
+export const FullScreen: Story = {
+  render: (args) => {
+    const [open, setOpen] = useState(false);
+    return (
+      <>
+        <Button variant="contained" onClick={() => setOpen(true)}>
+          Open Full Screen
+        </Button>
+        <Dialog {...args} open={open} onClose={() => setOpen(false)}>
+          <DialogTitle>Full Screen Dialog</DialogTitle>
+          <DialogContent>
+            <DialogContentText>
+              This dialog uses the full screen width and height.
+            </DialogContentText>
+          </DialogContent>
+          <DialogActions>
+            <Button onClick={() => setOpen(false)}>Close</Button>
+          </DialogActions>
+        </Dialog>
+      </>
+    );
+  },
+  args: {
+    fullScreen: true,
+  },
 }; 
