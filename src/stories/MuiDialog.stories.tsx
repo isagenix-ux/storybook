@@ -6,6 +6,7 @@ import {
   DialogContent,
   DialogContentText,
   DialogActions,
+  Stack,
 } from '@mui/material';
 import type { Meta, StoryObj } from '@storybook/react';
 
@@ -22,49 +23,97 @@ export default meta;
 type Story = StoryObj<typeof Dialog>;
 
 const DialogWithState = ({ ...args }) => {
-  const [open, setOpen] = useState(false);
-
-  const handleClickOpen = () => {
-    setOpen(true);
-  };
-
-  const handleClose = () => {
-    setOpen(false);
-  };
+  const [openSmall, setOpenSmall] = useState(false);
+  const [openMedium, setOpenMedium] = useState(false);
+  const [openLarge, setOpenLarge] = useState(false);
 
   return (
-    <>
-      <Button variant="contained" onClick={handleClickOpen}>
-        Open Dialog
+    <Stack direction="row" spacing={2}>
+      <Button variant="contained" onClick={() => setOpenSmall(true)}>
+        Small Dialog
       </Button>
+      <Button variant="contained" onClick={() => setOpenMedium(true)}>
+        Medium Dialog
+      </Button>
+      <Button variant="contained" onClick={() => setOpenLarge(true)}>
+        Large Dialog
+      </Button>
+
+      {/* Small Dialog */}
       <Dialog
         {...args}
-        open={open}
-        onClose={handleClose}
-        aria-labelledby="dialog-title"
-        aria-describedby="dialog-description"
+        maxWidth="sm"
+        open={openSmall}
+        onClose={() => setOpenSmall(false)}
+        aria-labelledby="small-dialog-title"
+        aria-describedby="small-dialog-description"
       >
-        <DialogTitle id="dialog-title">Dialog Title</DialogTitle>
+        <DialogTitle id="small-dialog-title">Small Dialog</DialogTitle>
         <DialogContent>
-          <DialogContentText id="dialog-description">
-            This is a sample dialog content. You can put any content here.
+          <DialogContentText id="small-dialog-description">
+            This is a small dialog with maxWidth="sm".
           </DialogContentText>
         </DialogContent>
         <DialogActions>
-          <Button onClick={handleClose}>Cancel</Button>
-          <Button onClick={handleClose} variant="contained" autoFocus>
+          <Button onClick={() => setOpenSmall(false)}>Cancel</Button>
+          <Button onClick={() => setOpenSmall(false)} variant="contained" autoFocus>
             Confirm
           </Button>
         </DialogActions>
       </Dialog>
-    </>
+
+      {/* Medium Dialog */}
+      <Dialog
+        {...args}
+        maxWidth="md"
+        open={openMedium}
+        onClose={() => setOpenMedium(false)}
+        aria-labelledby="medium-dialog-title"
+        aria-describedby="medium-dialog-description"
+      >
+        <DialogTitle id="medium-dialog-title">Medium Dialog</DialogTitle>
+        <DialogContent>
+          <DialogContentText id="medium-dialog-description">
+            This is a medium dialog with maxWidth="md". It provides more space for content.
+          </DialogContentText>
+        </DialogContent>
+        <DialogActions>
+          <Button onClick={() => setOpenMedium(false)}>Cancel</Button>
+          <Button onClick={() => setOpenMedium(false)} variant="contained" autoFocus>
+            Confirm
+          </Button>
+        </DialogActions>
+      </Dialog>
+
+      {/* Large Dialog */}
+      <Dialog
+        {...args}
+        maxWidth="lg"
+        open={openLarge}
+        onClose={() => setOpenLarge(false)}
+        aria-labelledby="large-dialog-title"
+        aria-describedby="large-dialog-description"
+      >
+        <DialogTitle id="large-dialog-title">Large Dialog</DialogTitle>
+        <DialogContent>
+          <DialogContentText id="large-dialog-description">
+            This is a large dialog with maxWidth="lg". It's suitable for displaying more complex content or data.
+          </DialogContentText>
+        </DialogContent>
+        <DialogActions>
+          <Button onClick={() => setOpenLarge(false)}>Cancel</Button>
+          <Button onClick={() => setOpenLarge(false)} variant="contained" autoFocus>
+            Confirm
+          </Button>
+        </DialogActions>
+      </Dialog>
+    </Stack>
   );
 };
 
 export const Basic: Story = {
   render: (args) => <DialogWithState {...args} />,
   args: {
-    maxWidth: 'sm',
     fullWidth: true,
   },
 };
