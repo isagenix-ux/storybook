@@ -24,6 +24,21 @@ export const foundation = {
 };
 
 export const theme = createTheme({
+  palette: {
+    primary: {
+      main: foundation.colors.turquoise[500],
+      light: foundation.colors.turquoise[300],
+      dark: foundation.colors.turquoise[700],
+    },
+    grey: {
+      100: foundation.colors.granite[100],
+      200: foundation.colors.granite[200],
+      500: foundation.colors.granite[500],
+      700: foundation.colors.granite[700],
+      800: foundation.colors.granite[800],
+      900: foundation.colors.granite[900],
+    },
+  },
   typography: {
     fontFamily: '"Nunito Sans", sans-serif',
     h1: {
