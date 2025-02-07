@@ -17,6 +17,10 @@ const config = {
   features: {
     storyStoreV7: false
   },
+  viteFinal: (config) => {
+    config.base = '/storybook/';
+    return config;
+  },
   docs: {
     autodocs: 'tag',
   },
