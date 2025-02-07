@@ -5,8 +5,8 @@ import PageviewIcon from '@mui/icons-material/Pageview';
 import AssignmentIcon from '@mui/icons-material/Assignment';
 import type { Meta } from '@storybook/react';
 
-const meta: Meta = {
-  title: 'Components/Data Display/Avatar',  // Updated title path
+const meta: Meta<typeof Avatar> = {
+  title: 'Components/DataDisplay/Avatar',  // Updated title path
   component: Avatar,
   tags: ['autodocs'],
   parameters: {

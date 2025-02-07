@@ -3,8 +3,8 @@ import { Meta, StoryObj } from '@storybook/react';
 import Alert from '@mui/material/Alert';
 import AlertTitle from '@mui/material/AlertTitle';
 
-const meta = {
-  title: 'Components/Alert',
+const meta: Meta<typeof Alert> = {
+  title: 'Components/Feedback/Alert',
   component: Alert,
   tags: ['autodocs'],
   argTypes: {
