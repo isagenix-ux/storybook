@@ -19,20 +19,30 @@ const meta: Meta<typeof Dialog> = {
   },
   argTypes: {
     maxWidth: {
-      control: 'select',
+      control: 'radio',
       options: ['sm', 'md', 'lg'],
       description: 'Determine the max-width of the dialog. The dialog width grows with the size of the screen.',
       defaultValue: 'sm',
+      table: {
+        type: { summary: 'sm | md | lg' },
+        defaultValue: { summary: 'sm' },
+      },
     },
     fullWidth: {
       control: 'boolean',
       description: 'If true, the dialog stretches to maxWidth.',
       defaultValue: true,
+      table: {
+        defaultValue: { summary: true },
+      },
     },
     fullScreen: {
       control: 'boolean',
       description: 'If true, the dialog will be full-screen',
       defaultValue: false,
+      table: {
+        defaultValue: { summary: false },
+      },
     },
   },
 };
