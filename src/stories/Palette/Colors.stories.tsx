@@ -3,7 +3,7 @@ import type { Meta } from '@storybook/react';
 import { foundation } from '../../../.storybook/theme';
 
 const meta: Meta = {
-  title: 'Foundation/Palette',
+  title: 'Palette/Colors',
   parameters: {
     layout: 'centered',
   },
@@ -52,7 +52,7 @@ const ColorSection = ({ title, colors }: { title: string; colors: Record<string,
   </Box>
 );
 
-export const Colors = () => (
+export const Primary = () => (
   <Box sx={{ p: 3 }}>
     <Typography variant="h4" sx={{ mb: 4 }}>
       Color Palette
