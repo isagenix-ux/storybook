@@ -1,3 +1,5 @@
+import { createTheme } from '@mui/material/styles';
+
 export const foundation = {
   colors: {
     granite: {
@@ -19,4 +21,44 @@ export const foundation = {
       900: '#003038',  // rgb(0, 48, 56)
     },
   },
-}; 
+};
+
+export const theme = createTheme({
+  typography: {
+    fontFamily: '"Nunito Sans", sans-serif',
+    h1: {
+      fontWeight: 300,
+    },
+    h2: {
+      fontWeight: 300,
+    },
+    h3: {
+      fontWeight: 400,
+    },
+    h4: {
+      fontWeight: 400,
+    },
+    h5: {
+      fontWeight: 500,
+    },
+    h6: {
+      fontWeight: 500,
+    },
+    subtitle1: {
+      fontWeight: 400,
+    },
+    subtitle2: {
+      fontWeight: 500,
+    },
+    body1: {
+      fontWeight: 400,
+    },
+    body2: {
+      fontWeight: 400,
+    },
+    button: {
+      fontWeight: 700,
+      textTransform: 'none',
+    },
+  },
+}); 
