@@ -11,7 +11,7 @@ import {
 import type { Meta, StoryObj } from '@storybook/react';
 
 const meta: Meta<typeof Dialog> = {
-  title: 'MUI/Dialog',
+  title: 'Components/Dialog',
   component: Dialog,
   tags: ['autodocs'],
   parameters: {

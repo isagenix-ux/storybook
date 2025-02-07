@@ -14,7 +14,7 @@ const Item = styled(Paper)(({ theme }) => ({
 }));
 
 const meta = {
-  title: 'MUI/Grid',
+  title: 'Components/Grid',
   component: Grid,
   tags: ['autodocs'],
   argTypes: {

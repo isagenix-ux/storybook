@@ -8,7 +8,7 @@ import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 
 const meta = {
-  title: 'MUI/Card',
+  title: 'Components/Card',
   component: Card,
   tags: ['autodocs'],
   argTypes: {

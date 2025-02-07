@@ -3,7 +3,7 @@ import { Meta, StoryObj } from '@storybook/react';
 import { DataGrid } from '@mui/x-data-grid';
 
 const meta = {
-  title: 'MUI/DataGrid',
+  title: 'Components/DataGrid',
   component: DataGrid,
   tags: ['autodocs'],
   argTypes: {

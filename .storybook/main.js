@@ -4,7 +4,6 @@ const config = {
   addons: [
     '@storybook/addon-links',
     '@storybook/addon-essentials',
-    '@storybook/addon-onboarding',
     '@storybook/addon-interactions',
   ],
   framework: {
@@ -18,9 +17,9 @@ const config = {
     storyStoreV7: false
   },
   managerHead: (head) => `
-    ${head}
-    <base href="/storybook/">
-  `,
+  ${head}
+  <base href="/storybook/">
+`,
   docs: {
     autodocs: 'tag',
   },

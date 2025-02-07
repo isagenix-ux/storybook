@@ -6,7 +6,7 @@ import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
 import dayjs from 'dayjs';
 
 const meta = {
-  title: 'MUI/DatePicker',
+  title: 'Components/DatePicker',
   component: DatePicker,
   tags: ['autodocs'],
   decorators: [

@@ -32,7 +32,7 @@ const SnackbarStory = () => {
 };
 
 const meta = {
-  title: 'MUI/Snackbar',
+  title: 'Components/Snackbar',
   component: Snackbar,
   tags: ['autodocs'],
 } satisfies Meta<typeof Snackbar>;

@@ -4,7 +4,7 @@ import Alert from '@mui/material/Alert';
 import AlertTitle from '@mui/material/AlertTitle';
 
 const meta = {
-  title: 'MUI/Alert',
+  title: 'Components/Alert',
   component: Alert,
   tags: ['autodocs'],
   argTypes: {

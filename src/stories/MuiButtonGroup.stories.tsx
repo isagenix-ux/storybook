@@ -8,7 +8,7 @@ import SendIcon from '@mui/icons-material/Send';
 import SaveIcon from '@mui/icons-material/Save';
 
 const meta = {
-  title: 'MUI/ButtonGroup',
+  title: 'Components/ButtonGroup',
   component: ButtonGroup,
   tags: ['autodocs'],
   argTypes: {

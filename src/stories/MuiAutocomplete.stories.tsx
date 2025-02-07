@@ -10,7 +10,7 @@ interface Film {
 }
 
 const meta: Meta<typeof Autocomplete> = {
-  title: 'MUI/Autocomplete',
+  title: 'Components/Autocomplete',
   component: Autocomplete,
   tags: ['autodocs'],
 };

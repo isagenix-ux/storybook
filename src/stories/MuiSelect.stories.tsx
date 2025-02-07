@@ -6,7 +6,7 @@ import FormControl from '@mui/material/FormControl';
 import InputLabel from '@mui/material/InputLabel';
 
 const meta = {
-  title: 'MUI/Select',
+  title: 'Components/Select',
   component: Select,
   tags: ['autodocs'],
   argTypes: {
