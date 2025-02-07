@@ -14,12 +14,12 @@ const config = {
   core: {
     builder: '@storybook/builder-webpack5',
   },
-  managerHead: (head) => `
-    ${head}
-    <base href="/storybook/">
-  `,
+  features: {
+    storyStoreV7: false
+  },
   docs: {
     autodocs: 'tag',
   },
 };
+
 export default config; 
