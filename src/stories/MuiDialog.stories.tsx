@@ -17,6 +17,24 @@ const meta: Meta<typeof Dialog> = {
   parameters: {
     layout: 'centered',
   },
+  argTypes: {
+    maxWidth: {
+      control: 'select',
+      options: ['sm', 'md', 'lg'],
+      description: 'Determine the max-width of the dialog. The dialog width grows with the size of the screen.',
+      defaultValue: 'sm',
+    },
+    fullWidth: {
+      control: 'boolean',
+      description: 'If true, the dialog stretches to maxWidth.',
+      defaultValue: true,
+    },
+    fullScreen: {
+      control: 'boolean',
+      description: 'If true, the dialog will be full-screen',
+      defaultValue: false,
+    },
+  },
 };
 
 export default meta;
