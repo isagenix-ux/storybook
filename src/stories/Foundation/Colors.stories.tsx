@@ -53,15 +53,33 @@ const ColorSection = ({ title, colors }: { title: string; colors: Record<string,
     <Typography variant="h6" sx={{ mb: 2 }}>
       {title}
     </Typography>
-    <Stack direction="row" spacing={2} flexWrap="wrap">
-      {Object.entries(colors).map(([key, value]) => (
-        <ColorBox
-          key={key}
-          color={value}
-          name={`${title} ${key}`}
-          value={value}
-        />
-      ))}
+    <Stack spacing={3}>
+      <Stack direction="row" spacing={2} flexWrap="wrap">
+        {Object.entries(colors)
+          .filter(([key]) => key === 'glacier' || parseInt(key) <= 500)
+          .map(([key, value]) => (
+            <ColorBox
+              key={key}
+              color={value}
+              name={key === 'glacier' ? 'Glacier' : `${title} ${key}`}
+              value={value}
+            />
+          ))}
+      </Stack>
+      {Object.entries(colors).some(([key]) => parseInt(key) > 500) && (
+        <Stack direction="row" spacing={2} flexWrap="wrap">
+          {Object.entries(colors)
+            .filter(([key]) => parseInt(key) > 500)
+            .map(([key, value]) => (
+              <ColorBox
+                key={key}
+                color={value}
+                name={`${title} ${key}`}
+                value={value}
+              />
+            ))}
+        </Stack>
+      )}
     </Stack>
   </Box>
 );
@@ -74,6 +92,7 @@ const colors = {
     700: '#727677',  // 114, 118, 119
     800: '#54585A',  // 84, 88, 90
     900: '#303030',  // 48, 48, 48
+    glacier: '#FFFFFF',  // 255, 255, 255
   },
   turquoise: {
     100: '#F2F8F9',  // 242, 248, 249
