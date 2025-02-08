@@ -3,7 +3,7 @@ import { Meta, StoryObj } from '@storybook/react';
 import TextField from '@mui/material/TextField';
 
 const meta = {
-  title: 'Components/TextField',
+  title: 'Components/Inputs/TextField',
   component: TextField,
   tags: ['autodocs'],
   argTypes: {

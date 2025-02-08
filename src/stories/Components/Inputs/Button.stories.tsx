@@ -3,7 +3,7 @@ import { Meta, StoryObj } from '@storybook/react';
 import Button from '@mui/material/Button';
 
 const meta = {
-  title: 'Components/Button',
+  title: 'Components/Inputs/Button',
   component: Button,
   tags: ['autodocs'],
   argTypes: {

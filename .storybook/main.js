@@ -17,9 +17,9 @@ const config = {
     storyStoreV7: false
   },
   managerHead: (head) => `
-  ${head}
-  <base href="/storybook/">
-`,
+    ${head}
+    <base href="/storybook/">
+  `,
   docs: {
     autodocs: 'tag',
   },
