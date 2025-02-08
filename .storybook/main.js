@@ -18,7 +18,7 @@ const config = {
   },
   managerHead: (head) => `
     ${head}
-    <base href="/storybook/">
+    <base href="${process.env.NODE_ENV === 'production' ? '/storybook/' : '/'}">
   `,
   docs: {
     autodocs: 'tag',

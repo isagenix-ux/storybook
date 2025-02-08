@@ -3,22 +3,28 @@ import { createTheme } from '@mui/material/styles';
 export const foundation = {
   colors: {
     granite: {
-      100: '#F6F6F6',  // rgb(246, 246, 246)
-      200: '#EDEEE',   // rgb(237, 238, 238)
-      500: '#D4D5D5',  // rgb(212, 213, 213)
-      700: '#727677',  // rgb(114, 118, 119)
-      800: '#54585A',  // rgb(84, 88, 90)
-      900: '#303030',  // rgb(48, 48, 48)
+      50: '#F5F5F5',
+      100: '#E9E9E9',
+      200: '#D9D9D9',
+      300: '#C4C4C4',
+      400: '#9D9D9D',
+      500: '#7B7B7B',
+      600: '#555555',
+      700: '#434343',
+      800: '#262626',
+      900: '#000000',
     },
     turquoise: {
-      100: '#F2F8F9',  // rgb(242, 248, 249)
-      150: '#E0EEF1',  // rgb(224, 238, 241)
-      200: '#BFDDE2',  // rgb(191, 221, 226)
-      300: '#4099A8',  // rgb(64, 153, 168)
-      500: '#00778B',  // rgb(0, 119, 139)
-      700: '#0C5F6F',  // rgb(12, 95, 111)
-      800: '#0C5F6F',  // rgb(12, 95, 111)
-      900: '#003038',  // rgb(0, 48, 56)
+      50: '#E6FFFA',
+      100: '#B2F5EA',
+      200: '#81E6D9',
+      300: '#4FD1C5',
+      400: '#38B2AC',
+      500: '#319795',
+      600: '#2C7A7B',
+      700: '#285E61',
+      800: '#234E52',
+      900: '#1D4044',
     },
   },
 };
@@ -27,16 +33,9 @@ export const theme = createTheme({
   palette: {
     primary: {
       main: foundation.colors.turquoise[500],
-      light: foundation.colors.turquoise[300],
-      dark: foundation.colors.turquoise[700],
     },
-    grey: {
-      100: foundation.colors.granite[100],
-      200: foundation.colors.granite[200],
-      500: foundation.colors.granite[500],
-      700: foundation.colors.granite[700],
-      800: foundation.colors.granite[800],
-      900: foundation.colors.granite[900],
+    secondary: {
+      main: foundation.colors.granite[500],
     },
   },
   typography: {
@@ -76,4 +75,6 @@ export const theme = createTheme({
       textTransform: 'none',
     },
   },
-}); 
+});
+
+export default theme; 
