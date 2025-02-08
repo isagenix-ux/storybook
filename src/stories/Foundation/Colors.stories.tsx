@@ -11,6 +11,16 @@ const meta: Meta = {
 
 export default meta;
 
+// Helper function to convert hex to rgb
+const hexToRgb = (hex: string) => {
+  const result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
+  return result ? {
+    r: parseInt(result[1], 16),
+    g: parseInt(result[2], 16),
+    b: parseInt(result[3], 16)
+  } : null;
+};
+
 const ColorBox = ({ color, name, value }: { color: string; name: string; value: string }) => (
   <Box sx={{ width: '200px', mb: 2 }}>
     <Box
@@ -25,12 +35,17 @@ const ColorBox = ({ color, name, value }: { color: string; name: string; value: 
     <Typography variant="subtitle2" sx={{ fontWeight: 'bold' }}>
       {name}
     </Typography>
-    <Typography variant="caption" display="block">
-      {value}
-    </Typography>
-    <Typography variant="caption" display="block" sx={{ color: 'text.secondary' }}>
-      {color}
-    </Typography>
+    <Stack spacing={0.5}>
+      <Typography variant="caption" display="block" sx={{ color: 'text.secondary' }}>
+        {color}
+      </Typography>
+      <Typography variant="caption" display="block" sx={{ color: 'text.secondary' }}>
+        {(() => {
+          const rgb = hexToRgb(color);
+          return rgb ? `rgb(${rgb.r}, ${rgb.g}, ${rgb.b})` : '';
+        })()}
+      </Typography>
+    </Stack>
   </Box>
 );
 
