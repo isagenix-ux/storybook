@@ -33,7 +33,7 @@ function TabPanel(props: TabPanelProps) {
 }
 
 const meta = {
-  title: 'Components/Tabs',
+  title: 'Components/Navigation/Tabs',
   component: Tabs,
   tags: ['autodocs'],
   argTypes: {

@@ -14,7 +14,7 @@ import ExpandMore from '@mui/icons-material/ExpandMore';
 import StarBorder from '@mui/icons-material/StarBorder';
 
 const meta: Meta<typeof List> = {
-  title: 'Components/List',
+  title: 'Components/Data Display/List',
   component: List,
   tags: ['autodocs'],
 };

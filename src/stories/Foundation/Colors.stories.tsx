@@ -3,7 +3,7 @@ import type { Meta } from '@storybook/react';
 import { foundation } from '../../../.storybook/theme';
 
 const meta: Meta = {
-  title: 'Palette/Colors',
+  title: 'Foundation/Colors',
   parameters: {
     layout: 'centered',
   },

@@ -16,10 +16,12 @@ const config = {
   features: {
     storyStoreV7: false
   },
-  managerHead: (head) => `
-    ${head}
-    <base href="${process.env.NODE_ENV === 'production' ? '/storybook/' : '/'}">
-  `,
+  async viteFinal(config, { configType }) {
+    if (configType === 'PRODUCTION') {
+      config.base = '/storybook/';
+    }
+    return config;
+  },
   docs: {
     autodocs: 'tag',
   },
