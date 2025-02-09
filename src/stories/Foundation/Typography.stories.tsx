@@ -1,3 +1,4 @@
+import React from 'react';
 import { Typography, Stack } from '@mui/material';
 import type { Meta, StoryObj } from '@storybook/react';
 import '@fontsource/nunito-sans/300.css';
@@ -16,6 +17,308 @@ const meta: Meta<typeof Typography> = {
 
 export default meta;
 type Story = StoryObj<typeof Typography>;
+
+export const Headings: Story = {
+  render: () => (
+    <Stack spacing={3}>
+      {/* H1 Variants */}
+      <Stack spacing={1}>
+        <Typography variant="h1" sx={{ fontWeight: 400 }}>
+          H1 Sans 400 - Isagenix International LLC
+        </Typography>
+        <Typography color="text.secondary" variant="caption">
+          64/72
+        </Typography>
+      </Stack>
+
+      <Stack spacing={1}>
+        <Typography variant="h1" sx={{ fontWeight: 600 }}>
+          H1 Sans 600 - Isagenix International LLC
+        </Typography>
+        <Typography color="text.secondary" variant="caption">
+          64/72
+        </Typography>
+      </Stack>
+
+      <Stack spacing={1}>
+        <Typography variant="h1" sx={{ fontWeight: 700 }}>
+          H1 Sans 700 - Isagenix International LLC
+        </Typography>
+        <Typography color="text.secondary" variant="caption">
+          64/72
+        </Typography>
+      </Stack>
+
+      <Stack spacing={1}>
+        <Typography variant="h1" sx={{ fontWeight: 800 }}>
+          H1 Sans 800 - Isagenix International LLC
+        </Typography>
+        <Typography color="text.secondary" variant="caption">
+          64/72
+        </Typography>
+      </Stack>
+
+      {/* H2 Variants */}
+      <Stack spacing={1}>
+        <Typography variant="h2" sx={{ fontWeight: 400 }}>
+          H2 Sans 400 - Isagenix International LLC
+        </Typography>
+        <Typography color="text.secondary" variant="caption">
+          48/56
+        </Typography>
+      </Stack>
+
+      <Stack spacing={1}>
+        <Typography variant="h2" sx={{ fontWeight: 600 }}>
+          H2 Sans 600 - Isagenix International LLC
+        </Typography>
+        <Typography color="text.secondary" variant="caption">
+          48/56
+        </Typography>
+      </Stack>
+
+      <Stack spacing={1}>
+        <Typography variant="h2" sx={{ fontWeight: 700 }}>
+          H2 Sans 700 - Isagenix International LLC
+        </Typography>
+        <Typography color="text.secondary" variant="caption">
+          48/56
+        </Typography>
+      </Stack>
+
+      <Stack spacing={1}>
+        <Typography variant="h2" sx={{ fontWeight: 800 }}>
+          H2 Sans 800 - Isagenix International LLC
+        </Typography>
+        <Typography color="text.secondary" variant="caption">
+          48/56
+        </Typography>
+      </Stack>
+
+      {/* H3 Variants */}
+      <Stack spacing={1}>
+        <Typography variant="h3" sx={{ fontWeight: 400 }}>
+          H3 Sans 400 - Isagenix International LLC
+        </Typography>
+        <Typography color="text.secondary" variant="caption">
+          32/44
+        </Typography>
+      </Stack>
+
+      <Stack spacing={1}>
+        <Typography variant="h3" sx={{ fontWeight: 600 }}>
+          H3 Sans 600 - Isagenix International LLC
+        </Typography>
+        <Typography color="text.secondary" variant="caption">
+          32/44
+        </Typography>
+      </Stack>
+
+      <Stack spacing={1}>
+        <Typography variant="h3" sx={{ fontWeight: 700 }}>
+          H3 Sans 700 - Isagenix International LLC
+        </Typography>
+        <Typography color="text.secondary" variant="caption">
+          32/44
+        </Typography>
+      </Stack>
+
+      <Stack spacing={1}>
+        <Typography variant="h3" sx={{ fontWeight: 800 }}>
+          H3 Sans 800 - Isagenix International LLC
+        </Typography>
+        <Typography color="text.secondary" variant="caption">
+          32/44
+        </Typography>
+      </Stack>
+
+      {/* H4 Variants */}
+      <Stack spacing={1}>
+        <Typography variant="h4" sx={{ fontWeight: 400 }}>
+          H4 Sans 400 - Isagenix International LLC
+        </Typography>
+        <Typography color="text.secondary" variant="caption">
+          24/36
+        </Typography>
+      </Stack>
+
+      <Stack spacing={1}>
+        <Typography variant="h4" sx={{ fontWeight: 600 }}>
+          H4 Sans 600 - Isagenix International LLC
+        </Typography>
+        <Typography color="text.secondary" variant="caption">
+          24/36
+        </Typography>
+      </Stack>
+
+      <Stack spacing={1}>
+        <Typography variant="h4" sx={{ fontWeight: 700 }}>
+          H4 Sans 700 - Isagenix International LLC
+        </Typography>
+        <Typography color="text.secondary" variant="caption">
+          24/36
+        </Typography>
+      </Stack>
+
+      <Stack spacing={1}>
+        <Typography variant="h4" sx={{ fontWeight: 800 }}>
+          H4 Sans 800 - Isagenix International LLC
+        </Typography>
+        <Typography color="text.secondary" variant="caption">
+          24/36
+        </Typography>
+      </Stack>
+
+      {/* H5 Variants */}
+      <Stack spacing={1}>
+        <Typography variant="h5" sx={{ fontWeight: 400 }}>
+          H5 Sans 400 - Isagenix International LLC
+        </Typography>
+        <Typography color="text.secondary" variant="caption">
+          21/28
+        </Typography>
+      </Stack>
+
+      <Stack spacing={1}>
+        <Typography variant="h5" sx={{ fontWeight: 600 }}>
+          H5 Sans 600 - Isagenix International LLC
+        </Typography>
+        <Typography color="text.secondary" variant="caption">
+          21/28
+        </Typography>
+      </Stack>
+
+      <Stack spacing={1}>
+        <Typography variant="h5" sx={{ fontWeight: 700 }}>
+          H5 Sans 700 - Isagenix International LLC
+        </Typography>
+        <Typography color="text.secondary" variant="caption">
+          21/28
+        </Typography>
+      </Stack>
+
+      <Stack spacing={1}>
+        <Typography variant="h5" sx={{ fontWeight: 800 }}>
+          H5 Sans 800 - Isagenix International LLC
+        </Typography>
+        <Typography color="text.secondary" variant="caption">
+          21/28
+        </Typography>
+      </Stack>
+
+      {/* Paragraph 1 Variants */}
+      <Stack spacing={1}>
+        <Typography variant="body1" sx={{ fontWeight: 400 }}>
+          Paragraph 1 Sans 400 - Isagenix International LLC
+        </Typography>
+        <Typography color="text.secondary" variant="caption">
+          16/24
+        </Typography>
+      </Stack>
+
+      <Stack spacing={1}>
+        <Typography variant="body1" sx={{ fontWeight: 600 }}>
+          Paragraph 1 Sans 600 - Isagenix International LLC
+        </Typography>
+        <Typography color="text.secondary" variant="caption">
+          16/24
+        </Typography>
+      </Stack>
+
+      <Stack spacing={1}>
+        <Typography variant="body1" sx={{ fontWeight: 700 }}>
+          Paragraph 1 Sans 700 - Isagenix International LLC
+        </Typography>
+        <Typography color="text.secondary" variant="caption">
+          16/24
+        </Typography>
+      </Stack>
+
+      <Stack spacing={1}>
+        <Typography variant="body1" sx={{ fontWeight: 800 }}>
+          Paragraph 1 Sans 800 - Isagenix International LLC
+        </Typography>
+        <Typography color="text.secondary" variant="caption">
+          16/24
+        </Typography>
+      </Stack>
+
+      {/* Paragraph 2 Variants */}
+      <Stack spacing={1}>
+        <Typography variant="body2" sx={{ fontWeight: 400 }}>
+          Paragraph 2 Sans 400 - Isagenix International LLC
+        </Typography>
+        <Typography color="text.secondary" variant="caption">
+          14/20
+        </Typography>
+      </Stack>
+
+      <Stack spacing={1}>
+        <Typography variant="body2" sx={{ fontWeight: 600 }}>
+          Paragraph 2 Sans 600 - Isagenix International LLC
+        </Typography>
+        <Typography color="text.secondary" variant="caption">
+          14/20
+        </Typography>
+      </Stack>
+
+      <Stack spacing={1}>
+        <Typography variant="body2" sx={{ fontWeight: 700 }}>
+          Paragraph 2 Sans 700 - Isagenix International LLC
+        </Typography>
+        <Typography color="text.secondary" variant="caption">
+          14/20
+        </Typography>
+      </Stack>
+
+      <Stack spacing={1}>
+        <Typography variant="body2" sx={{ fontWeight: 800 }}>
+          Paragraph 2 Sans 800 - Isagenix International LLC
+        </Typography>
+        <Typography color="text.secondary" variant="caption">
+          14/20
+        </Typography>
+      </Stack>
+
+      {/* Paragraph 3 Variants */}
+      <Stack spacing={1}>
+        <Typography sx={{ fontSize: '12px', lineHeight: '16px', fontWeight: 400 }}>
+          Paragraph 3 Sans 400 - Isagenix International LLC
+        </Typography>
+        <Typography color="text.secondary" variant="caption">
+          12/16
+        </Typography>
+      </Stack>
+
+      <Stack spacing={1}>
+        <Typography sx={{ fontSize: '12px', lineHeight: '16px', fontWeight: 600 }}>
+          Paragraph 3 Sans 600 - Isagenix International LLC
+        </Typography>
+        <Typography color="text.secondary" variant="caption">
+          12/16
+        </Typography>
+      </Stack>
+
+      <Stack spacing={1}>
+        <Typography sx={{ fontSize: '12px', lineHeight: '16px', fontWeight: 700 }}>
+          Paragraph 3 Sans 700 - Isagenix International LLC
+        </Typography>
+        <Typography color="text.secondary" variant="caption">
+          12/16
+        </Typography>
+      </Stack>
+
+      <Stack spacing={1}>
+        <Typography sx={{ fontSize: '12px', lineHeight: '16px', fontWeight: 800 }}>
+          Paragraph 3 Sans 800 - Isagenix International LLC
+        </Typography>
+        <Typography color="text.secondary" variant="caption">
+          12/16
+        </Typography>
+      </Stack>
+    </Stack>
+  ),
+};
 
 export const AllVariants: Story = {
   render: () => (
