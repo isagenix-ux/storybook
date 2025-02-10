@@ -75,6 +75,15 @@ export const theme = createTheme({
       textTransform: 'none',
     },
   },
+  components: {
+    MuiButton: {
+      styleOverrides: {
+        root: {
+          textTransform: 'uppercase',
+        },
+      },
+    },
+  },
 });
 
 export default theme; 

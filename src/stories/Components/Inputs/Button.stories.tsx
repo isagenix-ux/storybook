@@ -1,6 +1,7 @@
 import React from 'react';
 import { Meta, StoryObj } from '@storybook/react';
 import Button from '@mui/material/Button';
+import Stack from '@mui/material/Stack';
 
 const meta = {
   title: 'Components/Inputs/Button',
@@ -51,6 +52,14 @@ const meta = {
       },
     },
   },
+  parameters: {
+    layout: 'centered',
+  },
+  args: {
+    sx: {
+      textTransform: 'uppercase'
+    }
+  }
 } satisfies Meta<typeof Button>;
 
 export default meta;
